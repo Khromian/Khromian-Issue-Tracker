@@ -8,6 +8,9 @@
   they can configure further, or those with severe space constraints.
   Images should be <1.5GB and the installed system size should be <2.5GB.
 
+- Carlito and Caladea fonts installed by default, allowing LibreOffice to view
+  documents written using the Calibri and Cambria fonts with proper metrics.
+
 - Newly preinstalled by personal request: Neofetch, Kolourpaint, KMines, KDialog.
   p7zip-full and p7zip-rar are explicitly brought in.
 
