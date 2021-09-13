@@ -1,0 +1,38 @@
+# Khromian 2109-9 (2021-09-13)
+- Add NEWS file in the issue tracker for documenting changes.
+
+- Initial prototypes of small images. These have a minimal package set
+  with every non-essential application excluded to drive down the file
+  size. Some rare firmware is excluded. LZMA compression is used instead
+  of Zstd. These are suitable for users who want a very baseline system
+  they can configure further, or those with severe space constraints.
+  Images should be <1.5GB and the installed system size should be <2.5GB.
+
+- Newly preinstalled by personal request: Neofetch, Kolourpaint, KMines, KDialog.
+  p7zip-full and p7zip-rar are explicitly brought in.
+
+- The Zstd compression level for the compressed filesystem is increased from
+  15 to 17.
+
+- GTK_USE_PORTAL=1 is a default environment variable in order to enable native
+  KDE file pickers in Firefox and other select applications that support it.
+
+- Add a PolKit rule that allows users in the "sudo" group to mount external drives
+  without entering a password (necessary for KDE automounting to work correctly).
+  
+- If installing to a BTRFS partition, mount with discard=async on SSDs.
+
+- Rebase against Testing instead of Sid, fixing a notorious issue with Plasma
+  being removed due to dependency issues whenever installing the Broadcom or
+  NVIDIA driver. This does unfortunately mean reverting to Calamares 3.2.41.1
+  with a manual patch to fix BTRFS-on-root. libappindicator1 is temporarily
+  cherrypicked from Sid to ease installation of Discord. None of this is kosher!
+
+- Don't include Wine by default, as currently, only Wine 5.0 is available,
+  and this causes issues with applications that prefer your system Wine version,
+  due to its age. Additionally, Winetricks 20210206 is considerably out-of-date
+  and does not reflect the current state of the project. There are also some fair
+  concerns that new users who are unfamiliar with Wine may accidentally use
+  Windows versions of software even when Linux ports/alternatives are available,
+  due to the integration. If we re-add Wine in the future, it should explicitly 
+  mention that it is a compatibility layer for Windows applications when launched.
