@@ -7,6 +7,15 @@
 - Use WirePlumber as the default session manager for PipeWire,
   assuming no regressions are found.
 
+- ZRAM by default  - We're using Zstd compression and scale
+  to full memory size, mirroring Fedora 34's configuration.
+  Unlike Fedora however, physical swap creation (whether
+  partition or file) is still available in the installer.
+  This should merely make Khromian more functional on
+  low-RAM systems by reducing effective RAM usage, as
+  well as extend SSD lifetime by reducing the frequency
+  of physical swapping.
+
 - PulseAudio is excluded outright, as plasma-pa now accepts
   pipewire-pulse as an alternate dependency. Unfortunately,
   this requires replacing pavucontrol-qt with the GTK version
