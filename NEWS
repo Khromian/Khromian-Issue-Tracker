@@ -6,7 +6,7 @@
   assuming no regressions are found.
 
 - ZRAM by default  - We're using Zstd compression and scale
-  to 75% of memory size. Physical swap creation (whether
+  to the full memory size. Physical swap creation (whether
   partition or file) is still available in the installer.
   This should merely make Khromian more functional on
   low-RAM systems by reducing effective RAM usage, as
@@ -16,6 +16,11 @@
 - vm.swappiness is raised from 1 to 100, to complement
   ZRAM. Additionally, vm.page-cluster is set to 0 as per
   the suggestion in reddit.com/r/Fedora/comments/mzun99/
+  
+- NoHang is now ZRAM-aware, and a bit more aggressive
+  when there's low memory pressure, since otherwise
+  it would essentially never trigger until dire straits
+  when ZRAM was in use.
 
 - knownIssuesUrl and releaseNotesUrl are set in Calamares, showing
   links to the GH issues page and this NEWS file in the welcome
@@ -26,6 +31,12 @@
   Eventually this will be lowered to 3.5GiB once Calamares can
   mount the chroot with all of our fstab options so they apply
   during the extraction process.
+  
+- Lower the RAM minimum to 1GB. ZRAM makes this possible
+  comfortably. You can run a full desktop and even open
+  a few YouTube videos on only 1GB. It's not a great
+  experience, but I see no reason to arbitrarily restrict
+  it now.
   
 - plasma-discover-backend-snap is included by default, but
   ***not*** snapd. Snaps will remain discouraged, but this
