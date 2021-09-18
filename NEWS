@@ -1,21 +1,18 @@
-# Khromian 21-XX (UPCOMING VERSION, UNRELEASED)
-- Notable upgrades:
-  * Calamares 3.2.41.1 -> 3.2.42
-  
+# Khromian 2109-10 (UPCOMING VERSION, UNRELEASED)
 - Use WirePlumber as the default session manager for PipeWire,
   assuming no regressions are found.
   
 - KIO Fuse is preinstalled, for better handling of remote files.
 
 - ZRAM by default  - We're using Zstd compression and scale
-  to the full memory size. Physical swap creation (whether
+  to 2x the full memory size. Physical swap creation (whether
   partition or file) is still available in the installer.
   This should merely make Khromian more functional on
   low-RAM systems by reducing effective RAM usage, as
   well as extend SSD lifetime by reducing the frequency
   of physical swapping.
 
-- vm.swappiness is raised from 1 to 100, to complement
+- vm.swappiness is raised from 1 to 200, to complement
   ZRAM. Additionally, vm.page-cluster is set to 0 as per
   the suggestion in reddit.com/r/Fedora/comments/mzun99/
   
@@ -24,19 +21,15 @@
   it would essentially never trigger until dire straits
   when ZRAM was in use.
 
-- knownIssuesUrl and releaseNotesUrl are set in Calamares, showing
-  links to the GH issues page and this NEWS file in the welcome
-  screen of the installer.
-  
-- Lower the storage minimum from 8.5GB to 8GB. This isn't a
+- Lower the storage minimum from 8.5GiB to 6.5GiB. This isn't a
   major change right now but it'll make things a little less tight.
   Eventually this will be lowered to 3.5GiB once Calamares can
   mount the chroot with all of our fstab options so they apply
   during the extraction process.
   
-- Lower the RAM minimum to 1GB. ZRAM makes this possible
+- Lower the RAM minimum to 0.9GiB. ZRAM makes this possible
   comfortably. You can run a full desktop and even open
-  a few YouTube videos on only 1GB. It's not a great
+  a few YouTube videos on it. It's not a great
   experience, but I see no reason to arbitrarily restrict
   it now.
   
