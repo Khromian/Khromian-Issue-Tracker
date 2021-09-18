@@ -4,6 +4,8 @@
   
 - Use WirePlumber as the default session manager for PipeWire,
   assuming no regressions are found.
+  
+- KIO Fuse is preinstalled, for better handling of remote files.
 
 - ZRAM by default  - We're using Zstd compression and scale
   to the full memory size. Physical swap creation (whether
@@ -67,7 +69,7 @@
   they're easy enough to build that they're also easy to justify.
   
 - On minimal images, the default media player is now MPV instead of Haruna.
-  The default minimal browser is now Firefox ESR instead of Falkon, owing
+  The default minimal browser is now Chromium instead of Falkon, owing
   to the relatively small size increase, the lack of security and extension
   support for QtWebEngine, and the lack of active upstream development on Falkon.
 
