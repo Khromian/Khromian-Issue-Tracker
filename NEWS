@@ -1,7 +1,4 @@
 # Khromian 2109-10 (UPCOMING VERSION, UNRELEASED)
-- Use WirePlumber as the default session manager for PipeWire,
-  assuming no regressions are found.
-  
 - KIO Fuse is preinstalled, for better handling of remote files.
 
 - ZRAM by default  - We're using Zstd compression and scale
