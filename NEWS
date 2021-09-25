@@ -7,6 +7,12 @@
 
 - KIO Fuse is preinstalled, for better handling of remote files.
 
+- Plasma Thunderbolt is preinstalled, to appropriately handle
+  Thunderbolt devices. This also brings in the Bolt daemon.
+  
+- Also bringing in: plasma-firewall, plasma-wayland-protocols,
+  and plasma-runner-installer.
+
 - ZRAM by default  - We're using Zstd compression and scale
   to 2x the full memory size. Physical swap creation (whether
   partition or file) is still available in the installer.
@@ -46,9 +52,9 @@
   popular among gamers. libxnvctrl0 is also added to enable
   stats for NVIDIA GPUs, if the proprietary driver is present.
   
-- avahi-discover is excluded by default, as it's incredibly
-  niche to most users, and takes up a valuable slot in the
-  Kickoff launcher.
+- avahi-discover and ImageMagick are excluded by default, as
+  they're too niche for most users to care about, and they add
+  some ugly entries in the application launcher.
 
 - Images with the NVIDIA drivers preinstalled are built and
   distributed through the "Extras" section. This is probably
