@@ -12,6 +12,12 @@
   
 - Also bringing in: plasma-firewall, plasma-wayland-protocols,
   and plasma-runner-installer.
+  
+- Better GPU video acceleration for Intel cards,
+  including encode support, by preinstalling
+  intel-media-va-driver-non-free and
+  i965-va-driver-shaders as replacements
+  for their free equivalents.
 
 - ZRAM by default  - We're using Zstd compression and scale
   to 2x the full memory size. Physical swap creation (whether
