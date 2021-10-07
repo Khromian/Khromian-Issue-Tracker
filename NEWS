@@ -1,10 +1,18 @@
-# Khromian 21-10 (UPCOMING VERSION, UNRELEASED)
+# Khromian 21-10 (2021-10-07)
 - Notable updates:
-    Linux 5.10 --> 5.14
+    Linux 5.10.46 --> 5.14.6
     Chromium 90.0.4430.212 --> 93.0.4577.82
     KDE Frameworks 5.83 --> 5.86
-    Calamares 3.2.41.1 --> 3.2.43
+    Calamares 3.2.41.1 --> 3.2.44.2
     LibreOffice 7.1.5 --> 7.2.1
+
+- Both Testing and Sid are included in Apt's sources by
+  default, however the system is configured to only draw from
+  Testing for all packages except the NVIDIA drivers. This should
+  help ensure that the driver is patched for new kernels before the
+  kernels migrate to Testing.
+  
+- Use HTTPS by default with Apt.
 
 - KIO Fuse is preinstalled, for better handling of remote files.
 
