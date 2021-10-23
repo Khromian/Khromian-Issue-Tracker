@@ -23,6 +23,11 @@
   driver that were erroneously included in the
   default images are now excluded. This saves on
   a meager amount of space.
+
+- Tilde is now included as an easy CLI text editor,
+  suitable for use in tutorials that require editing
+  system files but are targeting an audience that may
+  still be intimidated by Nano.
  
 
 # Khromian 21-10 (2021-10-08)
