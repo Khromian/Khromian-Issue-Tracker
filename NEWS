@@ -1,3 +1,30 @@
+# Khromian 21.10-2 (2021-10-23)
+- First public October release after the round of
+  testing with 21-10.
+
+- Calamares 3.2.44.2 --> 3.2.44.3
+
+- All branding has been updated for the 2021 redesign.
+
+- Following the recommendation of the PipeWire Debian
+  maintainer, WirePlumber is once again the default
+  session manager, after previously reverting the
+  change due to regressions in default audio device
+  selection.
+  
+- The "packages" step in the installer was
+  streamlined so it doesn't have to run a dozen
+  separate operations. It also no longer refreshes
+  the Apt package listings. This was oddly failing
+  for one tester, even though their internet was
+  stable. It was redundant anyways.
+  
+- Some packages related to the proprietary NVIDIA
+  driver that were erroneously included in the
+  default images are now excluded. This saves on
+  a meager amount of space.
+ 
+
 # Khromian 21-10 (2021-10-08)
 - Notable updates:
     Linux 5.10.46 --> 5.14.9
