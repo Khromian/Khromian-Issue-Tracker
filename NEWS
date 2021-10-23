@@ -115,12 +115,6 @@
   Eventually, users should instead have an option during installation
   to install the proprietary drivers (including legacy if needed).
   
-- Free images are available in Extras. These are the same as the main images,
-  except they only use the "main" component, excluding "contrib"
-  and "non-free" firmware and software. This makes them fully DFSG-compliant,
-  at the cost of being extremely incompatible with most hardware. Still,
-  they're easy enough to build that they're also easy to justify.
-  
 - On minimal images, the default media player is now MPV instead of Haruna.
   The default minimal browser is now Chromium instead of Falkon, owing
   to the relatively small size increase, the lack of security and extension
